@@ -54,6 +54,10 @@ public class Controller2D : RaycastController
 
             if (hit)
             {
+				if (hit.distance == 0) {
+					continue;
+				}
+
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
                 if (i == 0 && slopeAngle <= maxClimbAngle) {
